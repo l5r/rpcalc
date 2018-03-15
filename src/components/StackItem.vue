@@ -8,7 +8,7 @@
 export default {
   name: 'StackItem',
   props: {
-    content: {type: String, required: true},
+    content: {type: Number, required: true},
     index: {type: Number, required: true}
   },
   methods: {
