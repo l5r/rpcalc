@@ -1,12 +1,12 @@
 <template>
   <div class="stack-item">
-    <button @click="remove">Remove</button><span>{{content}}</span>
+    <button @click="remove">Remove</button><span>{{ content }}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'stack-item',
+  name: 'StackItem',
   props: ['content', 'index'],
   methods: {
     remove () {
