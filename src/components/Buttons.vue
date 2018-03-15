@@ -1,14 +1,16 @@
 <template>
   <ul class="buttons">
-    <li v-for="(sym, id) in actions">
-      <button v-on:click="doAction(id)">{{sym}}</button>
+    <li
+      v-for="(sym, id) in actions"
+      :key="id">
+      <button @click="doAction(id)">{{ sym }}</button>
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'buttons',
+  name: 'Buttons',
   data () {
     return {
       actions: {'add': '+', 'mul': '×', 'div': '÷', 'sub': '-'}

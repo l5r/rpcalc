@@ -7,7 +7,10 @@
 <script>
 export default {
   name: 'StackItem',
-  props: ['content', 'index'],
+  props: {
+    content: {type: String, required: true},
+    index: {type: Number, required: true}
+  },
   methods: {
     remove () {
       this.$store.commit('removeItem', this.index)

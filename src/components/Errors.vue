@@ -1,9 +1,13 @@
 <template>
   <ul class="errors">
-    <li v-for="(error, idx) in errors">
-      <button @click="removeError(idx)">X</button> {{error}}
+    <li
+      v-for="(error, idx) in errors"
+      :key="idx">
+      <button @click="removeError(idx)">X</button> {{ error }}
     </li>
-    <button v-if="errors.length" @click="clearErrors">Clear errors</button>
+    <button
+      v-if="errors.length"
+      @click="clearErrors">Clear errors</button>
   </ul>
 
 </template>
@@ -12,7 +16,7 @@
 import { mapGetters, mapMutations } from 'vuex'
 
 export default {
-  name: 'errors',
+  name: 'Errors',
   computed: mapGetters(['errors']),
   methods: {
     ...mapMutations(['removeError', 'clearErrors'])

@@ -1,6 +1,10 @@
 <template>
   <div class="stack">
-    <stack-item v-for="(item, index) in items" :content="item" :index="index"></stack-item>
+    <stack-item
+      v-for="(item, index) in items"
+      :content="item"
+      :index="index"
+      :key="index"/>
     <span v-if="!items.length">Empty stack.</span>
   </div>
 </template>
@@ -10,7 +14,7 @@ import { mapGetters } from 'vuex'
 import StackItem from './StackItem'
 
 export default {
-  name: 'stack',
+  name: 'Stack',
   components: {
     StackItem
   },

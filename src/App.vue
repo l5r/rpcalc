@@ -4,13 +4,20 @@
       <span>Reverse Polish Calculator</span>
     </header>
     <main>
-      <stack></stack>
+      <stack/>
       <div class="input">
-        <input type="text" name="expr" id="expr" v-model="expr" />
-        <input type="submit" value="Add to stack" @click.prevent="push(expr)" />
-        <buttons></buttons>
+        <input
+          id="expr"
+          v-model="expr"
+          type="text"
+          name="expr">
+        <input
+          type="submit"
+          value="Add to stack"
+          @click.prevent="push(expr)" >
+        <buttons/>
       </div>
-      <errors></errors>
+      <errors/>
     </main>
   </div>
 </template>
@@ -21,7 +28,7 @@ import Buttons from './components/Buttons'
 import Errors from './components/Errors'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Stack, Buttons, Errors
   },
@@ -57,7 +64,6 @@ body
   -moz-osx-font-smoothing: grayscale
   color: #2c3e50
 
-
 main
   margin-top: 4rem
   max-width: 40rem
@@ -66,14 +72,12 @@ main
   display: grid
   grid-template-columns: repeat(2, 1fr)
 
-
 header
   margin: 0
   height: 56px
   padding: 0 16px 0 24px
   background-color: #35495E
   color: #ffffff
-
 
 header span
   display: block
@@ -84,7 +88,5 @@ header span
   font-weight: 400
   box-sizing: border-box
   padding-top: 16px
-
-
 
 </style>
