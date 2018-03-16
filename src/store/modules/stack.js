@@ -18,11 +18,18 @@ const mutations = {
   },
   removeItem (state, idx) {
     state.items.splice(idx, 1)
+  },
+  doCalculation (state, op) {
   }
 }
+
+const OPERATORS = [
+  'add', 'sub', 'div', 'mul'
+]
 
 export default {
   state,
   getters,
-  mutations
+  mutations,
+  OPERATORS
 }
