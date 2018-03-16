@@ -73,5 +73,28 @@ describe('store/stack.js', () => {
       mutations.removeItem(_state, 2)
       expect(_state.items).to.eql([0, 10, 30, 40])
     })
+
+    it('does calculations', () => {
+      let _state = {items: [1, 2], popped: []}
+
+      mutations.doCalculation(_state, 'sub')
+      expect(_state.items.pop()).to.eql(1)
+    })
+
+    it('rejects bad calculations', () => {
+      let _state = {items: [1, 0], popped: []}
+
+      expect(() => {
+        mutations.doCalculation(_state, 'div')
+      }).to.throw()
+    })
+
+    it('rejects invalid operators', () => {
+      let _state = {items: [1, 2], popped: []}
+
+      expect(() => {
+        mutations.doCalculation(_state, 'qmfqds')
+      }).to.throw()
+    })
   })
 })
