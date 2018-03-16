@@ -25,6 +25,7 @@ const mutations = {
    * @param  {Number}       item  the item to push onto the stack
    */
   push (state, item) {
+    if (isNaN(item)) throw new Error('Can\'t push `NaN` on to the stack.')
     state.items.push(item)
   },
   /**
