@@ -19,6 +19,8 @@ module.exports = {
   'rules': {
     // allow paren-less arrow functions
     'arrow-parens': 0,
+    // maximum line length (default: 80)
+    'max-len': 'error',
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
