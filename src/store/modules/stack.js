@@ -52,6 +52,26 @@ const mutations = {
    * @param  {OPERATORS}    op    the operator to apply
    */
   doCalculation (state, op) {
+    this.pop(state, 2)
+    const [b, a] = state.popped
+
+    switch (op) {
+      case 'add':
+        this.push(state, a + b)
+        break
+      case 'sub':
+        this.push(state, a - b)
+        break
+      case 'mul':
+        this.push(state, a * b)
+        break
+      case 'div':
+        if (a === 0) throw new Error('Can\'t divide by zero.')
+        this.push(state, a / b)
+        break
+      default:
+        throw new Error('Invalid operation: ' + op)
+    }
   }
 }
 
